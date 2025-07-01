@@ -24,6 +24,21 @@ void insertAtEnd(Node* &head,int val){
   }
   temp->next=n;
 }
+void insertAtBegin(Node* &head,int val){
+
+}
+void insertAtPos(Node* &head,int pos,int val){
+  if(pos==0){
+    insertAtBegin(head,val);
+  }
+  Node* n=new Node(val);
+  Node* temp = head;
+  for(int i=0;i<pos-1;i++){
+    temp=temp->next;
+  }
+  n->next=temp->next;
+  temp->next=n;
+}
 void display(Node* head){
   Node* temp=head;
   while (temp!=NULL)
