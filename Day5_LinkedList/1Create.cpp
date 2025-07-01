@@ -39,6 +39,39 @@ void insertAtPos(Node* &head,int pos,int val){
   n->next=temp->next;
   temp->next=n;
 }
+void deleteEnd(Node* &head){
+  if(head==NULL){
+    return;
+  }
+  if(head->next==NULL){
+    delete head;
+    head=NULL;
+    return;
+  }
+  Node* temp=head;
+  while(temp->next->next!=NULL){
+    temp=temp->next;
+  }
+  
+  delete temp->next;
+  temp->next=NULL;
+}
+void deleteFromBegin(Node* &head){
+
+}
+void deleteFromPos(Node* &head,int pos){
+  if(head==NULL) return;
+  if(pos==0){
+    deleteFromBegin(head);
+  }
+  Node* temp=head;
+  for(int i=0;i<pos-1;i++){
+    temp=temp->next;
+  }
+  Node* toDel=temp->next;
+  temp->next=temp->next->next;
+  delete toDel;
+}
 void display(Node* head){
   Node* temp=head;
   while (temp!=NULL)
