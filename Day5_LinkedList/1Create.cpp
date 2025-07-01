@@ -72,6 +72,21 @@ void deleteFromPos(Node* &head,int pos){
   temp->next=temp->next->next;
   delete toDel;
 }
+bool search(Node* head,int key){
+  if(head==NULL){
+    return false;
+  }
+  Node* temp=head;
+  while(temp!=NULL){
+    if(temp->data==key){
+      return true;
+    }
+    else{
+      temp=temp->next;
+    }
+  }
+  return false;
+}
 void display(Node* head){
   Node* temp=head;
   while (temp!=NULL)
