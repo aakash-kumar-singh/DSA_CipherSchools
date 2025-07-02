@@ -14,10 +14,10 @@ void display(Node* head){
   if(head==NULL){
     return;
   }
-  while(temp->next!=head){
-    cout<<temp->data<<" ";
-    temp=temp->next;
-  }
+  do {
+        cout << temp->data << " ";
+        temp = temp->next;
+    } while (temp != head);
 }
 void insertAtEnd(Node* &head,int val){
   Node* n=new Node(val);
