@@ -14,10 +14,22 @@ void display(Node* head){
   if(head==NULL){
     return;
   }
+  //We are using do while loop because while loop doesnot print the last node
+  
   do {
-        cout << temp->data << " ";
-        temp = temp->next;
+      cout << temp->data << " ";
+      temp = temp->next;
     } while (temp != head);
+    
+}
+void insertAtPosition(Node* &head,int pos,int val){
+  Node* n=new Node(val);
+  Node* temp=head;
+  for(int i=0;i<pos-1;i++){
+    temp=temp->next;
+  }
+  n->next=temp->next;
+  temp->next=n;
 }
 void insertAtEnd(Node* &head,int val){
   Node* n=new Node(val);
