@@ -1,0 +1,6 @@
+Encapsulation
+
+1.It is a process of wrapping similar code in one place
+2.we cannot access any function from the class directlty
+3.Increase in security of data
+4.It helps control the modification of our data member

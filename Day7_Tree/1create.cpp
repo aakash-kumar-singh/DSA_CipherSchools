@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 class TreeNode{
   public:
@@ -36,6 +37,44 @@ void postorderTraversal(TreeNode* root){
   postorderTraversal(root->right);
   cout<<root->data<<" ";
 }
+void levelOrder(TreeNode* root){
+  if(root==NULL) return;
+  queue<TreeNode*> q;
+  q.push(root);
+  q.push(NULL);
+  while(!q.empty()){
+    TreeNode* temp=q.front();
+    q.pop();
+    if(temp!=NULL){
+
+      cout<<temp->data<<" ";
+      if(temp->left)
+      {
+        q.push(temp->left);
+      }
+      if(temp->right){
+        q.push(temp->right);
+      }
+    }
+    else if(!q.empty()){
+      q.push(NULL);
+    }
+
+  }
+
+}
+int countNodes(TreeNode* root){
+  if(root==NULL) return 0;
+  return 1+countNodes(root->left)+countNodes(root->right);
+}
+int countLeaf(TreeNode* root){
+  if(root==NULL){
+    return 0;
+  }
+  if(!root->left && !root->right) return 1;
+  return countLeaf(root->left)+countLeaf(root->right);
+}
+
 
 int main(){
   TreeNode* root=new TreeNode(1);
