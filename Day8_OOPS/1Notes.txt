@@ -4,3 +4,10 @@ Encapsulation
 2.we cannot access any function from the class directlty
 3.Increase in security of data
 4.It helps control the modification of our data member
+
+PolyMorphism
+1. It is a combination of "poly" + "morph" which means many forms;
+ex-> single person is behaving different according to the situation
+
+PolyMorphism -> Compile time ->function overloading and operator overloading
+
