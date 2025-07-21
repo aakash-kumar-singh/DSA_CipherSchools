@@ -1,0 +1,9 @@
+1-based indexing
+left child -> 2* i index
+right child -> 2* i+1 index;
+parent -> i/2;
+
+0-based indexing
+left child -> 2* i+1 index
+right child -> 2* i+2 index;
+parent -> (i-1)/2;
