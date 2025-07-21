@@ -20,5 +20,18 @@ class graph{
   }
 };
 int main(){
+  int n;
+  cout<<"\nEnter number of nodes : ";
+  cin>>n;
+  int m;
+  cout<<"\nEnter number of edges : ";
+  cin>>m;
+  graph g;
+  for(int i=0;i<m;i++){
+    int u,v;
+    cin>>u>>v;
+    g.addEdge(u,v,0);
 
+  }
+  g.printGraph();
 }
